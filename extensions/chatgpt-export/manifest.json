@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Markdown Exporter",
+  "description": "Ajoute un bouton pour exporter la conversation ChatGPT en Markdown.",
+  "version": "1.0",
+  "permissions": ["scripting", "clipboardRead", "activeTab"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "action": {
+    "default_title": "Exporter la conversation",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

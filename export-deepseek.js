@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name        (gemini) AI markdown export
+// @name        (deepseek) AI markdown export
 // @namespace   http://tampermonkey.net/
 // @version     0.1
 // @description Ajoute un bouton pour exporter la conversation de Gemini en Markdown.
 // @author      Mickael Urrutia
-// @match       https://gemini.google.com/*
-// @require     file:///Users/murrutia/src/sandbox/ai-markdown-exporters/gemini-exporter.js
+// @match       https://chat.deepseek.com/*
+// @require     file:///Users/murrutia/src/sandbox/ai-md-export/export-deepseek.js
+// @grant       none
 // ==/UserScript==
 
 (function() {
