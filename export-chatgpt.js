@@ -5,7 +5,7 @@
 // @description Ajoute un bouton pour exporter la conversation de Gemini en Markdown.
 // @author      Mickael Urrutia
 // @match       https://chatgpt.com/*
-// @require     file:///Users/murrutia/src/sandbox/ai-md-export/chatgpt-export.js
+// @require     file:///Users/murrutia/src/sandbox/ai-md-export/export-chatgpt.js
 // @grant       none
 // ==/UserScript==
 

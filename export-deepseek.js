@@ -13,7 +13,7 @@
     'use strict';
 
     const btn_id = 'markdown-export-btn';
-    const toolbar_selector = '.leading-actions-wrapper';
+    const toolbar_selector = '._871cbca .ec4f5d61';
 
     async function getMarkdownFromBubble(bubble) {
         const moreMenuButton = bubble.querySelector('[data-test-id="more-menu-button"]');
@@ -76,7 +76,7 @@
         if (document.getElementById(btn_id)) {
             return;
         }
-        const toolbar = document.querySelector(toolbar_selector);
+
         const btn = document.createElement('button');
         btn.id = btn_id;
         btn.textContent = 'Exporter en Markdown';
@@ -88,7 +88,13 @@
         btn.style.padding = '10px 20px';
         btn.style.cursor = 'pointer';
         btn.addEventListener('click', exportConversation);
-        toolbar.appendChild(btn);
+
+        // Là c'est le bazar parce que deepseek n'a pas un HTML sémantiquement parlant
+        // Ici, on cherche les items [role=button] direct descendants du bloc de conversation
+        // et on rajoute notre bouton après le dernier de cette liste
+        const buttons = document.querySelectorAll(`${toolbar_selector}>[role=button]`);
+        const button_before = buttons[buttons.length - 1]
+        button_before.after(btn);
     }
 
     // On va observer le conteneur parent de la toolbar et vérifier régulièrement si la toolbar apparaît
